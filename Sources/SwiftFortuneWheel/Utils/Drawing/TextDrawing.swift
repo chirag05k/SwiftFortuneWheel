@@ -356,7 +356,7 @@ extension TextDrawing {
 //                        UIColor.red.setStroke()
 //                        context.drawPath(using: .fillStroke)
             
-            string.draw(in: CGRect(x: 0, y: 0, width: textRect.width, height: CGFloat.infinity), withAttributes: textAttributes)
+            string.draw(in: CGRect(x: -15, y: 0, width: textRect.width, height: CGFloat.infinity), withAttributes: textAttributes)
             
             context.restoreGState()
         }
