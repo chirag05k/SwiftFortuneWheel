@@ -20,10 +20,16 @@ extension String {
     /// - Returns: Text width
     func width(by font: SFWFont) -> CGFloat {
         var textWidth: CGFloat = 0
+
         for element in self {
             let characterString = String(element)
-            let letterSize = characterString.size(withAttributes: [.font: font])
-            textWidth += letterSize.width
+            if #available(iOS 11.0, *) {
+                let letterSize = characterString.size(withAttributes: [.font: UIFontMetrics.default.scaledFont(for: font)])
+                textWidth += letterSize.width
+            } else {
+                let letterSize = characterString.size(withAttributes: [.font: font])
+                textWidth += letterSize.width
+            }
         }
         return textWidth + 1
     }
