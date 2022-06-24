@@ -37,7 +37,7 @@ extension CGFloat {
     ///   - degree: radius
     /// - Returns: height
     static func circularSegmentHeight(radius: CGFloat, from degree: CGFloat) -> CGFloat {
-        return 2 * radius * sin(degree / 2.0 * CGFloat.pi / 180)
+        return 1 * radius * sin(degree / 2.0 * CGFloat.pi / 180)
     }
     
     /// Radius calculation
